@@ -5,6 +5,7 @@ from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from app.db.database import db
 from app.core.logging_config import logger
 from app.core.prompts import final_answer_prompt, sql_query_prompt
+from app.core.logging_config import logger
 import re
 
 google_llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.0)
@@ -87,4 +88,5 @@ def generate_final_answer(user_question, refined_sql_query, executed_query_resul
     except:
         final_answer = ""
         matplotlib_code = ""
+    logger.info(f"matplotlib code > {matplotlib_code}")
     return final_answer, matplotlib_code

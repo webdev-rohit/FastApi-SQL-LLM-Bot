@@ -11,6 +11,7 @@ router = APIRouter()
 
 current_dir = os.path.dirname(__file__)
 file_path = os.path.join(current_dir, '..', '..', '..', 'data', 'Finance_data.csv')
+
 print('\n\nfile_path >', file_path)
 
 try:
